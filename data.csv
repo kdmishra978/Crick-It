@@ -1,0 +1,232 @@
+S.no,Name,Age,Player Type,Batting Hand,Bowling Type,Experience,Bat Skills,Bowl Skills,Wicket Keeping Skills,Batting Order,Batting Comfort,Bowling Comfort,Bat Aggression,Bowl Aggression,Available,Runs,Wickets,Innings,Bowling Order
+1,Rohit Sharma,32,batsman,right hand,right arm off spin,90,90,52,23,Top Order,fast right ,left,super,low,FALSE,0,0,0,midover 
+2,Hardik Pandya,27,allrounder,right hand,right arm seam,83,86,83,21,Finisher,fast spin right ,right,super,high,FALSE,0,0,0,midover deathover 
+3,Jasprit Bumrah,28,bowler,right hand,right arm fast,85,33,90,0,Tail Ender,spin ,right left ,normal,super,TRUE,0,0,0,powerplay midover deathover 
+4,Kuldeep Yadav,27,bowler,left hand,left arm leg spin,83,44,86,12,Tail Ender,fast ,right,normal,high,TRUE,0,0,0,midover 
+5,Virat Kohli,33,batsman,right hand,right arm seam,90,90,29,27,Top Order,fast seam spin right ,right,super,normal,FALSE,0,0,0,midover 
+6,Rishabh Pant,24,wicketkeeperbatsman,left hand,NaN,81,85,20,78,Middle Order,seam spin right ,left,super,normal,TRUE,0,0,0,midover 
+7,Shikhar Dhawan,36,batsman,left hand,left arm off spin,91,88,30,22,Top Order,fast seam right ,right,high,normal,TRUE,0,0,0,midover 
+8,Shubman Gill,22,batsman,right hand,right arm off spin,80,84,32,23,Top Order,fast spin right ,right left ,high,normal,TRUE,0,0,0,powerplay 
+9,Iresh Saxena,30,bowler,left hand,left arm leg spin,89,29,85,3,Tail Ender,spin right ,right left ,normal,super,TRUE,0,0,0,midover deathover 
+10,Anil Kumble,40,bowler,right hand,right arm leg spin,93,45,88,14,Tail Ender,fast spin right ,right left ,low,super,FALSE,0,0,0,powerplay midover deathover 
+11,Wasim Jaffer,45,batsman,right hand,right arm off spin,95,86,45,12,Top Order,fast spin right ,right,high,normal,TRUE,0,0,0,midover 
+12,Manbinder Bisla,39,wicketkeeperbatsman,right hand,NaN,87,84,12,76,Middle Order,seam spin left ,right,normal,normal,TRUE,0,0,0,midover 
+13,Rahul Dravid,33,wicketkeeperbatsman,right hand,NaN,92,89,45,89,Top Order,fast seam spin right left ,right left ,high,low,TRUE,0,0,0,midover 
+14,Ian Botham,36,allrounder,right hand,right arm seam,92,88,88,14,Finisher,spin right left ,right left ,super,super,TRUE,0,0,0,powerplay midover deathover 
+15,Vinay Kumar,38,bowler,right hand,right arm fast,89,35,86,12,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+16,Ajay Jadeja,38,batsman,right hand,right arm seam,92,84,45,14,Middle Order,fast right left ,left,normal,normal,TRUE,0,0,0,midover 
+17,Gautam Gambhir,30,batsman,left hand,NaN,87,87,2,0,Top Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+18,Brendon McCullum,35,wicketkeeperbatsman,right hand,NaN,89,88,10,85,Top Order,fast seam right left ,right,super,low,FALSE,0,0,0,midover 
+19,Shakib Al Hasan,34,allrounder,left hand,left arm off spin,84,81,85,0,Finisher,fast spin right ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+20,Eoin Morgan,35,batsman,left hand,right arm leg spin,85,85,21,0,Middle Order,fast seam right ,right left ,super,low,TRUE,0,0,0,midover 
+21,Jacques Kallis,39,allrounder,right hand,right arm seam,92,87,84,15,Top Order,fast seam right ,right left ,super,high,TRUE,0,0,0,powerplay midover deathover 
+22,Brett Lee,31,bowler,right hand,right arm fast,87,46,90,12,Tail Ender,fast right ,right left ,high,super,FALSE,0,0,0,powerplay midover deathover 
+23,Shivam Mavi,23,bowler,right hand,right arm fast,72,44,74,15,Tail Ender,spin ,right left ,normal,normal,TRUE,0,0,0,powerplay deathover 
+24,Kamlesh Nagarkoti,21,bowler,right hand,right arm fast,72,28,76,15,Tail Ender,spin ,right left ,normal,high,TRUE,0,0,0,powerplay deathover 
+25,Piyush Chawla,29,bowler,left hand,right arm leg spin,85,48,84,0,Tail Ender,fast right ,right left ,normal,high,TRUE,0,0,0,midover deathover 
+26,Quinton de Kock,27,wicketkeeperbatsman,left hand,NaN,84,88,0,85,Top Order,fast seam right ,right,super,normal,TRUE,0,0,0,midover 
+27,Ishan Kishan,23,wicketkeeperbatsman,left hand,NaN,79,84,12,79,Top Order,fast spin right left ,right,high,normal,TRUE,0,0,0,midover 
+28,Rahul Chahar,20,bowler,right hand,right arm leg spin,74,12,80,2,Tail Ender,spin ,right,normal,high,TRUE,0,0,0,midover 
+29,Kieron Pollard,31,allrounder,right hand,right arm seam,86,87,83,12,Finisher,fast seam spin right ,right,super,high,FALSE,0,0,0,midover 
+30,Saurabh Tiwary,30,batsman,left hand,NaN,81,75,21,12,Finisher,seam right ,right,normal,normal,TRUE,0,0,0,midover 
+31,James Pattinson,26,bowler,right hand,right arm fast,82,36,84,12,Tail Ender,seam right ,right,normal,high,TRUE,0,0,0,powerplay midover 
+32,Jayant Yadav,22,bowler,right hand,right arm off spin,72,25,77,12,Tail Ender,fast spin ,right left ,normal,normal,TRUE,0,0,0,midover 
+33,Suryakumar Yadav,23,batsman,right hand,right arm off spin,84,85,25,26,Middle Order,fast spin right ,right,high,normal,TRUE,0,0,0,midover 
+34,Digvijay Deshmukh,23,bowler,right hand,right arm fast,63,12,69,0,Tail Ender,right ,right,normal,normal,TRUE,0,0,0,midover deathover 
+35,Aditya Tare,34,wicketkeeperbatsman,right hand,NaN,80,80,0,81,Finisher,fast spin right ,right left ,normal,normal,TRUE,0,0,0,midover 
+36,Dhawan Kulkarni,31,bowler,right hand,right arm seam,76,10,80,0,Tail Ender,spin right ,right left ,normal,normal,TRUE,0,0,0,powerplay midover deathover 
+37,Nathan Coulter-Nile,33,bowler,right hand,right arm fast,83,64,82,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+38,Trent Boult,31,bowler,right hand,left arm fast,88,21,87,0,Tail Ender,fast right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+39,Krunal Pandya,29,allrounder,left hand,left arm off spin,80,80,84,0,Finisher,fast spin right left ,right left ,high,high,TRUE,0,0,0,powerplay midover deathover 
+40,Chris Lynn,30,batsman,right hand,NaN,82,85,11,0,Top Order,fast seam right left ,right,high,normal,TRUE,0,0,0,midover 
+41,Sherfane Rutherford,32,bowler,left hand,left arm fast,77,34,80,0,Tail Ender,fast spin right ,left,normal,normal,TRUE,0,0,0,powerplay midover deathover 
+42,Anmolpreet Singh,21,batsman,right hand,right arm off spin,70,74,22,0,Finisher,fast spin right left ,right,normal,normal,TRUE,0,0,0,midover 
+43,Mohsin Khan,21,allrounder,left hand,left arm fast,65,62,61,0,Finisher,fast seam spin left ,right left ,normal,normal,TRUE,0,0,0,powerplay deathover 
+44,Mitchell McClenaghan,34,bowler,left hand,left arm fast,80,38,83,0,Tail Ender,fast right ,right left ,normal,normal,TRUE,0,0,0,powerplay midover deathover 
+45,Prince Balwant Rai Singh,20,allrounder,right hand,right arm leg spin,62,63,61,0,Finisher,fast spin right ,right left ,normal,normal,TRUE,0,0,0,midover deathover 
+46,Anukul Roy,23,allrounder,left hand,left arm off spin,63,66,66,0,Finisher,fast spin left ,right left ,normal,normal,TRUE,0,0,0,midover 
+47,Sandeep Warrier,30,bowler,right hand,right arm seam,63,23,64,0,Finisher,seam spin ,right,normal,normal,TRUE,0,0,0,midover 
+48,Dinesh Karthik,36,wicketkeeperbatsman,right hand,NaN,83,81,0,82,Middle Order,seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+49,Pat Cummins,28,bowler,right hand,right arm fast,86,57,87,0,Tail Ender,fast right ,right left ,high,high,TRUE,0,0,0,powerplay midover deathover 
+50,Sunil Narine,33,bowler,left hand,right arm off spin,86,70,88,0,Finisher,fast spin right left ,right left ,high,super,TRUE,0,0,0,powerplay midover deathover 
+51,Nikhil Naik,27,batsman,right hand,right arm off spin,64,65,34,0,Finisher,fast spin right ,right,normal,normal,TRUE,0,0,0,midover 
+52,M Siddharth,23,allrounder,right hand,right arm leg spin,62,61,59,0,Finisher,fast spin right ,right left ,normal,normal,TRUE,0,0,0,midover 
+53,Andre Russell,33,allrounder,right hand,right arm fast,86,87,85,0,Finisher,fast seam spin right left ,right left ,super,high,FALSE,0,0,0,powerplay midover deathover 
+54,Lockie Ferguson,30,bowler,right hand,right arm fast,83,34,85,0,Tail Ender,fast seam right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+55,Prasidh Krishna,25,bowler,right hand,right arm seam,71,22,76,0,Tail Ender,fast right ,right left ,normal,normal,TRUE,0,0,0,powerplay midover deathover 
+56,Nitish Rana,27,allrounder,left hand,right arm off spin,88,83,79,0,Top Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,powerplay midover 
+57,Siddhesh Lad,29,batsman,right hand,right arm off spin,64,62,23,0,Finisher,fast spin right ,right left ,normal,normal,TRUE,0,0,0,midover 
+58,Tim Seifert,27,wicketkeeperbatsman,right hand,NaN,73,76,0,79,Middle Order,fast seam right ,right,normal,normal,TRUE,0,0,0,midover 
+59,Rinku Singh,24,batsman,left hand,right arm off spin,71,76,45,0,Finisher,fast spin right ,right left ,normal,normal,TRUE,0,0,0,midover 
+60,Varun Chakravarthy,30,bowler,right hand,right arm off spin,75,34,82,0,Tail Ender,spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+61,Ali Khan,31,bowler,right hand,right arm fast,70,10,65,0,Tail Ender,fast right ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+62,Tom Banton,23,wicketkeeperbatsman,right hand,NaN,74,80,0,79,Top Order,fast seam left ,right,high,high,TRUE,0,0,0,midover 
+63,Chris Green,28,allrounder,right hand,right arm off spin,73,65,71,0,Finisher,seam right ,right left ,super,high,TRUE,0,0,0,midover deathover 
+64,Rahul Tripathi,30,batsman,right hand,right arm seam,76,81,50,0,Middle Order,fast seam right left ,right,high,normal,TRUE,0,0,0,midover 
+65,Mohammed Siraj,27,bowler,right hand,right arm fast,76,29,78,0,Tail Ender,fast right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+66,Chris Morris,34,allrounder,right hand,right arm fast,88,73,86,23,Finisher,fast right left ,right left ,high,high,TRUE,0,0,0,powerplay midover deathover 
+67,Josh Philippe,24,batsman,right hand,NaN,73,76,0,79,Middle Order,fast seam right left ,left,super,normal,TRUE,0,0,0,midover 
+68,Moeen Ali,34,allrounder,left hand,right arm off spin,83,85,81,0,Middle Order,fast seam right left ,right left ,high,high,TRUE,0,0,0,powerplay midover deathover 
+69,Aaron Finch,35,batsman,right hand,right arm off spin,89,85,24,0,Top Order,fast seam right left ,right,high,normal,TRUE,0,0,0,midover 
+70,AB de Villiers,36,wicketkeeperbatsman,right hand,right arm leg spin,90,89,12,86,Middle Order,fast seam spin right left ,left,super,normal,FALSE,0,0,0,midover 
+71,Shahbaz Ahmed,27,bowler,left hand,left arm off spin,68,59,65,0,Tail Ender,fast right ,right left ,normal,normal,TRUE,0,0,0,midover deathover 
+72,Parthiv Patel,36,wicketkeeperbatsman,left hand,NaN,82,82,4,81,Top Order,fast seam spin right ,left,normal,normal,TRUE,0,0,0,midover 
+73,Yuzvendra Chahal,31,bowler,right hand,right arm leg spin,81,26,82,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+74,Navdeep Saini,29,bowler,right hand,right arm seam,76,30,81,0,Tail Ender,spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+75,Isuru Udana,33,bowler,right hand,left arm seam,73,23,76,0,Tail Ender,spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+76,Dale Steyn,36,bowler,right hand,right arm fast,90,30,88,14,Tail Ender,fast right left ,right left ,normal,super,TRUE,0,0,0,powerplay midover deathover 
+77,Pawan Negi,28,allrounder,left hand,left arm off spin,71,71,73,0,Finisher,fast seam right ,right,high,high,TRUE,0,0,0,midover 
+78,Devdutt Padikkal,21,batsman,right hand,right arm off spin,75,76,32,15,Top Order,fast seam spin right ,right,super,normal,TRUE,0,0,0,midover 
+79,Shivam Dube,28,allrounder,left hand,right arm seam,74,71,75,0,Tail Ender,fast spin right ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+80,Umesh Yadav,34,bowler,right hand,right arm fast,86,35,83,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+81,Gurkeerat Mann Singh,31,batsman,right hand,right arm off spin,71,73,20,0,Finisher,fast spin left ,left,high,normal,TRUE,0,0,0,midover 
+82,Washington Sundar,22,allrounder,left hand,right arm off spin,76,71,79,0,Finisher,seam spin left ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+83,Pavan Deshpande,32,allrounder,left hand,right arm off spin,73,71,67,0,Tail Ender,seam spin left ,right left ,normal,normal,TRUE,0,0,0,midover 
+84,Adam Zampa,29,bowler,right hand,right arm leg spin,80,20,80,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+85,MS Dhoni,36,wicketkeeperbatsman,right hand,NaN,95,90,30,90,Middle Order,fast seam spin right left ,left,super,normal,FALSE,0,0,0,midover 
+86,Imran Tahir,36,bowler,right hand,right arm leg spin,92,20,86,20,Tail Ender,spin right left ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+87,Lungi Ngidi,25,bowler,right hand,right arm fast,80,20,83,0,Tail Ender,seam right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+88,Ruturaj Gaikwad,24,batsman,right hand,right arm off spin,71,73,23,0,Middle Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+89,Shane Watson,36,allrounder,right hand,right arm seam,89,87,82,0,Top Order,fast seam right left ,right left ,high,high,FALSE,0,0,0,powerplay midover deathover 
+90,Ambati Rayudu,36,batsman,right hand,right arm off spin,87,85,20,20,Top Order,fast seam spin right ,left,high,normal,TRUE,0,0,0,midover 
+91,Murali Vijay,36,batsman,right hand,NaN,86,81,34,0,Top Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+92,Kedar Jadhav,36,batsman,right hand,right arm off spin,84,81,51,0,Middle Order,seam spin right left ,left,normal,high,TRUE,0,0,0,midover 
+93,Ravindra Jadeja,33,allrounder,left hand,right arm off spin,88,82,87,0,Finisher,fast spin right left ,right left ,high,high,FALSE,0,0,0,powerplay midover 
+94,Deepak Chahar,29,bowler,right hand,right arm seam,78,40,82,0,Tail Ender,fast right left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover deathover 
+95,Narayan Jagadeesan,26,batsman,right hand,NaN,65,67,19,0,Finisher,seam spin left ,right,normal,normal,TRUE,0,0,0,midover 
+96,Mitchell Santner,29,allrounder,left hand,left arm off spin,81,74,82,22,Finisher,fast right left ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+97,KM Asif,28,batsman,right hand,right arm seam,70,67,34,14,Finisher,spin right left ,right left ,normal,normal,TRUE,0,0,0,midover 
+98,Shardul Thakur,30,allrounder,right hand,right arm seam,77,59,75,0,Finisher,fast spin right ,right left ,high,high,TRUE,0,0,0,powerplay midover deathover 
+99,R Sai Kishore,25,allrounder,left hand,left arm off spin,65,61,60,0,Tail Ender,fast spin left ,right left ,normal,normal,TRUE,0,0,0,midover 
+100,Faf du Plessis,36,batsman,right hand,right arm leg spin,92,88,21,0,Top Order,fast seam right ,left,super,normal,TRUE,0,0,0,midover 
+101,Monu Kumar,27,allrounder,right hand,right arm seam,67,58,69,0,Tail Ender,spin right left ,left,normal,normal,TRUE,0,0,0,midover 
+102,Dwayne Bravo,36,allrounder,right hand,right arm seam,92,80,87,0,Middle Order,fast seam right left ,right left ,super,high,TRUE,0,0,0,powerplay midover deathover 
+103,Josh Hazlewood,30,bowler,left hand,right arm fast,86,34,86,0,Tail Ender,fast right ,right left ,normal,super,TRUE,0,0,0,powerplay midover deathover 
+104,Sam Curran,23,allrounder,left hand,left arm seam,77,80,80,0,Finisher,fast seam right left ,right left ,super,high,TRUE,0,0,0,midover deathover 
+105,Karn Sharma,34,allrounder,left hand,right arm leg spin,80,16,77,22,Tail Ender,spin right left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+106,Shreyas Iyer,27,batsman,right hand,right arm leg spin,82,86,41,0,Top Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+107,Kagiso Rabada,26,bowler,left hand,right arm fast,86,31,88,0,Tail Ender,fast right left ,right left ,normal,super,TRUE,0,0,0,powerplay midover deathover 
+108,Marcus Stoinis,32,allrounder,right hand,right arm seam,85,84,76,0,Finisher,fast seam right ,right left ,super,normal,TRUE,0,0,0,midover deathover 
+109,Sandeep Lamichhane,21,bowler,right hand,right arm leg spin,71,13,69,0,Tail Ender,spin right ,right left ,normal,normal,TRUE,0,0,0,midover deathover 
+110,Ishant Sharma,33,bowler,right hand,right arm fast,86,12,86,0,Tail Ender,fast right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+111,Ajinkya Rahane,33,batsman,right hand,NaN,86,86,11,0,Top Order,fast spin right ,right left ,normal,normal,TRUE,0,0,0,midover 
+112,Ravichandran Ashwin,35,bowler,right hand,right arm off spin,89,59,87,0,Tail Ender,fast spin right ,right left ,normal,super,TRUE,0,0,0,powerplay midover deathover 
+113,Shimron Hetmyer,25,wicketkeeperbatsman,left hand,NaN,80,80,0,81,Middle Order,fast seam spin right ,right left ,high,normal,TRUE,0,0,0,midover 
+114,Daniel Sams,29,allrounder,right hand,left arm seam,75,70,77,0,Finisher,seam spin right ,right left ,normal,normal,TRUE,0,0,0,midover deathover 
+115,Alex Carey,30,wicketkeeperbatsman,left hand,NaN,76,78,12,81,Middle Order,fast seam right left ,left,high,normal,TRUE,0,0,0,midover 
+116,Mohit Sharma,30,bowler,right hand,right arm seam,81,18,81,0,Tail Ender,spin right left ,right left ,normal,normal,TRUE,0,0,0,powerplay deathover 
+117,Prithvi Shaw,22,batsman,right hand,right arm off spin,76,81,0,0,Top Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+118,Praveen Dubey,28,bowler,right hand,right arm leg spin,66,36,67,0,Tail Ender,spin ,right left ,normal,normal,TRUE,0,0,0,powerplay midover deathover 
+119,Lalit Yadav,26,allrounder,right hand,right arm off spin,74,72,66,22,Finisher,fast spin left ,right left ,normal,normal,TRUE,0,0,0,midover deathover 
+120,Avesh Khan,25,bowler,right hand,right arm fast,68,26,65,0,Tail Ender,seam right ,right,normal,normal,TRUE,0,0,0,powerplay midover 
+121,Axar Patel,27,allrounder,left hand,left arm off spin,79,78,79,22,Finisher,fast seam spin left ,right left ,normal,normal,FALSE,0,0,0,powerplay midover deathover 
+122,Tushar Deshpande,26,allrounder,left hand,right arm seam,74,63,74,0,Tail Ender,fast spin right ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+123,Anrich Nortje,28,bowler,right hand,right arm fast,81,18,82,0,Tail Ender,fast spin right ,right left ,normal,super,TRUE,0,0,0,powerplay midover deathover 
+124,Harshal Patel,31,allrounder,right hand,right arm off spin,77,75,79,0,Finisher,seam spin right ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+125,Keemo Paul,23,allrounder,right hand,right arm fast,72,70,70,0,Tail Ender,fast right left ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+126,Amit Mishra,36,bowler,right hand,right arm leg spin,87,30,83,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+127,KL Rahul,29,wicketkeeperbatsman,right hand,NaN,87,88,0,82,Top Order,fast seam spin right ,right,super,normal,FALSE,0,0,0,midover 
+128,Harpreet Brar,26,allrounder,left hand,right arm off spin,71,55,68,10,Tail Ender,fast spin left ,right left ,high,normal,TRUE,0,0,0,powerplay midover 
+129,Ishan Porel,23,bowler,right hand,right arm seam,68,41,66,0,Tail Ender,seam spin ,right,normal,normal,TRUE,0,0,0,powerplay midover 
+130,Mandeep Singh,30,batsman,right hand,right arm off spin,77,79,43,0,Middle Order,fast spin right ,right,high,normal,TRUE,0,0,0,midover 
+131,Jimmy Neesham,21,allrounder,left hand,left arm seam,77,77,76,0,Finisher,fast spin right left ,left,high,high,TRUE,0,0,0,powerplay midover 
+132,Tajinder Singh,29,allrounder,right hand,right arm off spin,61,63,64,12,Finisher,fast spin left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+133,Chris Jordan,33,bowler,right hand,right arm fast,79,51,79,11,Tail Ender,seam spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+134,Karun Nair,30,batsman,right hand,right arm off spin,76,81,40,0,Finisher,fast spin right ,right left ,high,normal,TRUE,0,0,0,midover 
+135,Deepak Hooda,26,allrounder,right hand,NaN,77,76,60,13,Middle Order,fast spin right ,right left ,super,high,TRUE,0,0,0,midover 
+136,Ravi Bishnoi,21,bowler,right hand,right arm leg spin,71,30,73,20,Tail Ender,fast spin left ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+137,Arshdeep Singh,22,bowler,right hand,left arm seam,69,12,68,32,Tail Ender,fast left ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+138,Glenn Maxwell,33,allrounder,right hand,right arm off spin,87,86,72,0,Finisher,fast seam spin right ,right left ,super,normal,TRUE,0,0,0,midover 
+139,Mujeeb Ur Rahman,20,bowler,right hand,right arm off spin,74,34,79,0,Tail Ender,spin right left ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+140,Sarfaraz Khan,24,batsman,right hand,NaN,72,73,23,0,Finisher,fast spin right left ,left,high,normal,TRUE,0,0,0,midover 
+141,Sheldon Cottrell,32,bowler,left hand,left arm fast,81,23,83,0,Tail Ender,spin right left ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+142,Mayank Agarwal,30,batsman,right hand,NaN,83,83,14,21,Top Order,fast seam spin right ,right,high,low,TRUE,0,0,0,powerplay 
+143,Mohammad Shami,31,bowler,right hand,right arm fast,87,30,87,0,Tail Ender,seam right ,right left ,normal,super,TRUE,0,0,0,powerplay midover deathover 
+144,Darshan Nalkande,23,bowler,right hand,right arm seam,67,23,67,0,Middle Order,spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+145,Nicholas Pooran,26,wicketkeeperbatsman,left hand,NaN,82,84,13,82,Middle Order,fast spin right ,left,super,low,TRUE,0,0,0,powerplay 
+146,Chris Gayle,36,batsman,left hand,right arm off spin,92,89,59,0,Top Order,fast seam spin right left ,right,super,normal,FALSE,0,0,0,midover 
+147,Murugan Ashwin,31,bowler,right hand,right arm leg spin,74,20,76,0,Tail Ender,fast seam right ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+148,Jagadeesha Suchith,27,allrounder,left hand,left arm off spin,69,61,65,0,Tail Ender,fast spin right ,right,normal,high,TRUE,0,0,0,midover 
+149,Krishnappa Gowtham,33,allrounder,right hand,right arm off spin,75,74,69,15,Middle Order,fast spin right left ,right left ,high,normal,TRUE,0,0,0,powerplay midover 
+150,Hardus Viljoen,32,bowler,right hand,right arm fast,74,17,71,15,Tail Ender,spin right left ,right,super,normal,TRUE,0,0,0,midover 
+151,Simran Singh,21,batsman,right hand,NaN,67,68,0,0,Finisher,fast spin right ,left,normal,normal,TRUE,0,0,0,midover 
+152,Steve Smith,32,batsman,right hand,left arm leg spin,89,88,39,0,Top Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+153,Ben Stokes,30,allrounder,left hand,left arm seam,87,86,83,15,Middle Order,fast spin right ,right left ,super,high,TRUE,0,0,0,midover 
+154,Sanju Samson,27,wicketkeeperbatsman,right hand,NaN,82,85,0,85,Top Order,fast seam right left ,left,high,low,TRUE,0,0,0,deathover 
+155,Andrew Tye,35,allrounder,right hand,right arm fast,81,70,83,15,Finisher,fast spin right ,right left ,high,high,TRUE,0,0,0,powerplay midover deathover 
+156,Kartik Tyagi,21,bowler,right hand,right arm fast,68,20,68,12,Tail Ender,fast right left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+157,Ankit Rajpoot,28,bowler,right hand,right arm fast,71,12,72,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+158,Shreyas Gopal,28,allrounder,right hand,right arm leg spin,74,62,75,0,Tail Ender,spin right left ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+159,Rahul Tewatia,28,allrounder,right hand,right arm leg spin,72,74,72,13,Finisher,fast spin right left ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+160,Jaydev Unadkat,30,bowler,right hand,left arm fast,77,21,76,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+161,Mayank Markande,24,bowler,right hand,right arm leg spin,75,14,72,0,Tail Ender,right left ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+162,Mahipal Lomror,22,batsman,left hand,NaN,71,67,4,0,Finisher,fast spin right left ,left,high,normal,TRUE,0,0,0,midover 
+163,Oshane Thomas,24,allrounder,left hand,left arm fast,74,71,71,0,Finisher,fast spin left ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+164,Riyan Parag,20,batsman,right hand,right arm leg spin,72,71,55,22,Finisher,fast spin right left ,right,high,normal,TRUE,0,0,0,midover 
+165,Yashasvi Jaiswal,20,batsman,left hand,left arm leg spin,72,73,12,22,Top Order,seam spin right ,left,super,normal,TRUE,0,0,0,midover 
+166,Anuj Rawat,22,bowler,left hand,left arm fast,68,32,69,12,Tail Ender,fast right left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+167,Akash Singh,19,bowler,right hand,right arm fast,65,20,65,12,Tail Ender,fast left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+168,Jofra Archer,26,bowler,right hand,right arm fast,85,62,89,0,Tail Ender,fast right left ,right left ,high,super,TRUE,0,0,0,powerplay midover deathover 
+169,David Miller,32,batsman,left hand,NaN,83,81,0,0,Middle Order,fast seam left ,right left ,high,normal,TRUE,0,0,0,powerplay midover 
+170,Jos Buttler,31,wicketkeeperbatsman,right hand,NaN,86,84,20,83,Top Order,fast seam right left ,right,super,normal,TRUE,0,0,0,midover 
+171,Manan Vohra,28,batsman,right hand,NaN,77,76,12,22,Middle Order,fast spin right ,left,high,normal,TRUE,0,0,0,midover 
+172,Shashank Singh,30,allrounder,right hand,right arm off spin,68,66,65,22,Finisher,fast spin right left ,right left ,normal,normal,TRUE,0,0,0,midover 
+173,Varun Aaron,32,bowler,right hand,right arm fast,81,19,79,0,Tail Ender,fast right left ,right left ,high,high,TRUE,0,0,0,powerplay midover deathover 
+174,Tom Curran,26,allrounder,right hand,right arm fast,75,72,73,0,Finisher,fast spin right ,right left ,high,normal,TRUE,0,0,0,powerplay midover deathover 
+175,Robin Uthappa,36,wicketkeeperbatsman,right hand,NaN,87,84,0,87,Top Order,fast seam spin right ,right,high,normal,TRUE,0,0,0,midover 
+176,Anirudha Joshi,23,bowler,left hand,left arm fast,69,45,68,23,Tail Ender,spin right left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+177,David Warner,35,batsman,left hand,left arm leg spin,88,88,23,0,Top Order,fast seam right left ,right,super,normal,FALSE,0,0,0,midover 
+178,Rashid Khan,23,allrounder,right hand,right arm leg spin,86,63,88,0,Tail Ender,fast spin right ,right left ,high,super,TRUE,0,0,0,powerplay midover deathover 
+179,Sanjay Yadav,26,allrounder,left hand,left arm off spin,71,65,72,0,Tail Ender,spin right left ,right left ,high,normal,TRUE,0,0,0,powerplay midover 
+180,Wriddhiman Saha,36,wicketkeeperbatsman,right hand,NaN,87,84,15,82,Middle Order,fast spin right left ,left,high,low,TRUE,0,0,0,midover 
+181,Khaleel Ahmed,24,bowler,right hand,left arm fast,76,16,78,0,Tail Ender,seam right ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+182,Sandeep Sharma,28,bowler,right hand,right arm seam,79,19,78,0,Tail Ender,seam spin left ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+183,Abdul Samad,20,allrounder,right hand,right arm leg spin,68,71,61,13,Finisher,fast spin right ,right left ,super,normal,TRUE,0,0,0,powerplay midover 
+184,Mitchell Marsh,30,allrounder,right hand,right arm seam,79,76,77,0,Middle Order,fast spin right left ,right left ,high,high,TRUE,0,0,0,powerplay midover 
+185,Shreevats Goswami,32,batsman,left hand,NaN,87,78,5,0,Middle Order,fast spin right ,right left ,super,low,TRUE,0,0,0,midover 
+186,Mohammad Nabi,36,allrounder,right hand,right arm off spin,84,75,84,13,Finisher,spin right left ,right left ,super,high,TRUE,0,0,0,powerplay midover 
+187,Fabian Allen,26,allrounder,right hand,right arm off spin,74,71,69,0,Tail Ender,seam spin left ,right left ,high,normal,TRUE,0,0,0,powerplay midover 
+188,Abhishek Sharma,21,allrounder,left hand,left arm off spin,68,65,67,0,Tail Ender,spin right left ,right left ,high,low,TRUE,0,0,0,powerplay midover 
+189,Basil Thampi,28,bowler,right hand,right arm seam,73,23,75,0,Tail Ender,fast right left ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+190,Billy Stanlake,27,bowler,left hand,right arm fast,74,12,76,0,Tail Ender,fast right ,left,normal,high,TRUE,0,0,0,powerplay midover 
+191,Sandeep Bavanaka,29,bowler,left hand,NaN,71,23,69,12,Tail Ender,fast left ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+192,Jason Holder,30,allrounder,right hand,right arm seam,81,74,81,0,Finisher,fast seam right ,right left ,super,high,TRUE,0,0,0,powerplay midover deathover 
+193,Bhuvneshwar Kumar,31,bowler,right hand,right arm seam,85,28,86,0,Tail Ender,fast spin right ,right left ,low,high,TRUE,0,0,0,powerplay midover deathover 
+194,Virat Singh,24,allrounder,left hand,left arm off spin,69,66,64,0,Finisher,seam spin left ,right left ,high,normal,TRUE,0,0,0,powerplay midover 
+195,T Natarajan,30,bowler,right hand,left arm seam,75,20,74,12,Tail Ender,fast spin right ,right left ,low,high,TRUE,0,0,0,powerplay midover deathover 
+196,Kane Williamson,31,batsman,right hand,right arm off spin,91,88,23,2,Top Order,fast seam spin right ,right left ,high,low,TRUE,0,0,0,midover 
+197,Shahbaz Nadeem,32,bowler,right hand,right arm off spin,76,22,73,0,Tail Ender,fast spin right ,right left ,normal,high,TRUE,0,0,0,powerplay midover 
+198,Jonny Bairstow,32,wicketkeeperbatsman,right hand,right arm seam,83,84,23,80,Top Order,fast seam right left ,right left ,high,low,TRUE,0,0,0,midover 
+199,Manish Pandey,32,batsman,right hand,right arm seam,81,82,23,7,Middle Order,fast spin right ,right,high,low,TRUE,0,0,0,midover 
+200,Vijay Shankar,30,allrounder,right hand,right arm seam,76,75,73,0,Tail Ender,fast spin left ,right left ,high,normal,TRUE,0,0,0,powerplay midover 
+201,Siddarth Kaul,31,bowler,right hand,right arm fast,77,13,74,0,Tail Ender,fast spin right ,right left ,low,high,TRUE,0,0,0,powerplay midover 
+202,Prithvi Raj Yarra,23,bowler,left hand,left arm seam,68,15,65,22,Tail Ender,fast left ,right left ,normal,normal,TRUE,0,0,0,powerplay midover 
+203,Priyam Garg,21,batsman,right hand,right arm seam,72,72,23,28,Finisher,fast spin right ,right,super,low,TRUE,0,0,0,midover 
+204,Lasith Malinga,37,bowler,right hand,right arm fast,95,22,87,12,Tail Ender,seam right ,right left ,low,super,TRUE,0,0,0,powerplay midover deathover 
+205,Harbhajan Singh,36,bowler,right hand,right arm off spin,93,51,86,22,Tail Ender,fast spin right left ,right left ,high,super,TRUE,0,0,0,powerplay midover deathover 
+206,Jonty Rhodes,40,batsman,right hand,right arm seam,94,85,32,42,Middle Order,fast spin right ,right,high,low,TRUE,0,0,0,powerplay 
+207,Sachin Tendulkar,39,batsman,right hand,right arm off spin,93,90,37,23,Top Order,fast seam spin right ,left,super,low,TRUE,0,0,0,midover 
+208,Virender Sehwag,38,batsman,right hand,right arm off spin,94,87,53,12,Top Order,fast seam right left ,left,super,low,TRUE,0,0,0,midover 
+209,kevin pietersen,40,batsman,right hand,right arm off spin,95,86,44,22,Middle Order,fast spin right ,right,super,low,FALSE,0,0,0,midover 
+210,VVS Laxman,40,batsman,right hand,NaN,96,85,23,13,Middle Order,fast seam spin right ,right,normal,low,TRUE,0,0,0,midover 
+211,Adam Gilchrist,39,wicketkeeperbatsman,left hand,NaN,92,88,4,90,Top Order,fast seam right left ,right left ,high,low,TRUE,0,0,0,midover 
+212,Joe Root,29,batsman,right hand,right arm leg spin,88,88,12,0,Top Order,fast spin right left ,right,high,normal,TRUE,0,0,0,midover 
+213,Mark Boucher,29,wicketkeeperbatsman,right hand,NaN,90,87,0,90,Middle Order,fast seam right ,right,high,low,TRUE,0,0,0,midover 
+214,Jimmy Anderson,38,bowler,left hand,right arm fast,91,34,90,0,Tail Ender,spin right ,right left ,low,super,FALSE,0,0,0,powerplay midover deathover 
+215,Andrew Flintoff,38,allrounder,right hand,right arm fast,91,87,88,0,Middle Order,fast seam right ,right left ,super,high,FALSE,0,0,0,powerplay midover deathover 
+216,Martin Guptil,36,batsman,right hand,NaN,87,87,0,0,Top Order,fast seam right left ,left,high,low,TRUE,0,0,0,midover 
+217,Yuvraj Singh,38,allrounder,left hand,left arm off spin,90,89,85,0,Middle Order,fast spin right ,right left ,super,normal,FALSE,0,0,0,midover 
+218,Mitchell Starc,31,bowler,left hand,left arm fast,89,45,89,0,Tail Ender,fast right ,right left ,low,super,FALSE,0,0,0,powerplay midover deathover 
+219,Stuart Broad,35,bowler,left hand,right arm fast,89,41,89,0,Tail Ender,fast right ,right left ,low,super,TRUE,0,0,0,powerplay midover deathover 
+220,Nathan Lyon,34,bowler,right hand,right arm off spin,86,34,88,0,Tail Ender,fast right ,right left ,low,high,TRUE,0,0,0,midover 
+221,Suresh Raina,35,batsman,left hand,left arm off spin,91,86,52,0,Top Order,fast spin right ,right,high,normal,TRUE,0,0,0,midover 
+222,Kumar Sangakkara,38,wicketkeeperbatsman,left hand,right arm off spin,92,88,45,88,Top Order,fast seam left ,left,high,low,TRUE,0,0,0,midover 
+223,Irfan Pathan,32,allrounder,left hand,left arm seam,90,74,89,0,Finisher,fast seam ,right,high,high,FALSE,0,0,0,powerplay midover deathover 
+224,Zaheer Khan,32,bowler,right hand,left arm fast,92,20,89,0,Tail Ender,fast seam ,right left ,normal,high,TRUE,0,0,0,powerplay midover deathover 
+225,Mitchell Johnson,33,bowler,left hand,left arm fast,91,20,89,0,Tail Ender,fast seam ,right left ,high,super,TRUE,0,0,0,powerplay midover deathover 
+226,Yusuf Pathan,34,allrounder,right hand,right arm off spin,92,89,85,15,Middle Order,fast seam spin right ,right left ,super,high,FALSE,0,0,0,midover 
+227,Brad Hogg,36,bowler,left hand,left arm off spin,92,20,88,20,Tail Ender,fast seam ,right left ,high,high,FALSE,0,0,0,powerplay midover 
+228,S. Sreesanth,39,bowler,right hand,right arm fast,85,15,87,0,Tail Ender,seam ,right left ,low,high,TRUE,0,0,0,powerplay midover deathover 
+229,Cheteshwar Pujara,34,batsman,right hand,NaN,87,86,12,0,Middle Order,fast seam spin right left ,right,normal,normal,TRUE,0,0,0,midover 
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,

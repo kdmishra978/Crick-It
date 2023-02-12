@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Congratulations {{team|upper}}</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        body{
+            background: url("{% static 'images/matchbg.jpg' %}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 100% 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        table{
+            width:100%;
+            table-layout: fixed;
+          }
+          .tbl-header{
+            background-color: rgba(255,255,255,0.3);
+           }
+          .tbl-content{
+            height:400px;
+            overflow-x:auto;
+            margin-top: 0px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background-color:rgba(0, 0, 0, 0.57);
+          }
+          th{
+            padding: 10px 10px;
+            font-weight: 500;
+            font-size: 110%;
+            color: #fff;
+            text-transform: uppercase;
+          }
+          td{
+            padding: 10px;
+            text-align: center;
+            vertical-align:middle;
+            font-weight: 300;
+            font-size: 100%;
+            color: #fff;
+            font-weight: bold;
+            border-bottom: solid 1px rgba(255,255,255,0.1);
+          }
+          ::-webkit-scrollbar {
+            width: 6px;
+        } 
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        } 
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        }
+          #teams{
+              width: 80%;
+          }
+        .congrats{
+            color:white;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-shadow: 1px 2px 5px black;
+
+        }
+        .name, h2{
+            font-size:150%;
+            color:white;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-shadow: 1px 2px 5px black;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+    <div align="center">
+        <!-- Congratulations -->
+        <div id="congrat">
+            <img src="{% static 'images/sold1.gif' %}" alt="" srcset="">
+            <br>
+            <br>
+            <div>
+                <h2 class="congrats">Congratulations <span style="padding-left: 12.5px;"></span>{{team}}</h2>
+            </div>
+        </div>
+        <br>
+        
+        <!-- List oF Teams -->
+        <div id="teams" align="center">
+            <h2 style="letter-spacing:2px" align="center">TEAMS</h2>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center;">TEAM NAME</th>
+                      <th style="text-align: center;">PLAYERS</th>
+                      <th style="text-align: center;">BUGDET</th>
+                    </tr>
+                  </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                    {% for team in teams %}
+                        <tr>
+                            <td class="name">{{team.name|upper}}</td>
+                            <td class="name">{{team.players.all|length}}</td>
+                            <td class="name">{{team.bugdet}}</td>
+                        </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        
+        <!-- Return Back -->
+        <div>
+            <button type="button" id="return" class="btn btn-warning">RETURN BACK</button>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script>
+        $("#teams").hide()
+        $("#return").hide()
+        setTimeout(function(){
+            $("#congrat").fadeOut()
+            $("#teams").show()
+            $("#return").show()
+        }, 1000)
+        $("#return").click(function(){
+            console.log("click")
+            location.href = "http://127.0.0.1:8000/players/{{type}}/"
+        })
+    </script>
+{% endblock script %}

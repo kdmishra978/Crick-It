@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>{{won.name}} - Won the toss</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        .backface{
+            position: absolute;
+            animation: backflips 2s;
+        }
+        .display{
+            position: relative;
+            animation: flips 2s;
+        }
+        @keyframes flips {
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(720deg);
+            }
+        }
+        @keyframes backflips {
+            from{
+                transform: rotateX(0deg);
+            }
+            to{
+                transform:rotateX(360deg);
+            }
+        }
+        #myVideo, #mybg {
+            position: fixed;
+            right: 0;
+            top:0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: fill;
+          }
+
+          .content {
+            position: relative;
+            margin-top: 7%;
+            bottom: 0;
+            color: #f1f1f1;
+            text-align:center;
+          }
+        .team_name{
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight:bolder;
+            letter-spacing:10px;
+            text-shadow: 1px 7px 7px #000000;
+            color:#ffcc29;
+            font-size: 400%;
+            font-weight: bolder;
+        }
+        .call{
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight:bolder;
+            letter-spacing:10px;
+            color:#e2780f;
+            text-shadow: 1px 2px 2px #000000;
+            font-size: 250%;
+            font-weight: bold;
+            margin-bottom: 1.5%;
+            margin-top: 1.5%;
+        }
+        .text{
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight:bolder;
+            text-shadow: 1px 2px 2px #000000;
+            font-size: 200%;
+            font-weight: bold;
+            margin-bottom: 0%;
+            margin-top: 5%;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+    {% if result == "Heads" %}
+        <video autoplay muted id="myVideo">
+            <source src="{% static 'images/heads_won.mp4' %}" type="video/mp4">
+        </video>
+    {% else %}
+        <video autoplay muted id="myVideo">
+            <source src="{% static 'images/tails_won.mp4' %}" type="video/mp4">
+        </video>
+    {% endif %}
+
+    <audio src="{% static 'sound/coinflip.wav' %}" autoplay></audio>
+    <audio src="{% static 'sound/coinspin.mp3' %}" autoplay></audio>
+    <img src="{% static 'images/stdbgblur.png'%}" alt="" id="mybg">
+    <div id="main" align="center" class="content">
+        <div class="winning team_name">
+            {{won.name}}
+        </div>
+        <div class="winning call">
+            won the toss
+        </div>
+        <div id="select">
+            <div class="text">What do you want to to do first?</div>
+            <form action="http://127.0.0.1:8000/match/start/{{team1|lower}}/{{team2|lower}}/" method="POST">
+                {% csrf_token %} 
+                <input type="hidden" name="won" value="{{won}}">
+                <input type="hidden" name="selected" value="bat">
+                <div align="center" width="50%">
+                    <input class="form-control spl-btn" type="submit" name="batting" value="Batting" style="margin-top:2%;font-size:150%;font-family: 'Montserrat', sans-serif;letter-spacing:2px;background-color:rgba(0, 0, 0, 0.777);color:wheat;font-weight:bold;text-transform:uppercase;display:inline-block;width:20%;">
+                </div>
+            </form>
+            <form action="http://127.0.0.1:8000/match/start/{{team1|lower}}/{{team2|lower}}/" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="won" value="{{won}}">
+                <input type="hidden" name="selected" value="bowl">
+                <div align="center" width="50%">
+                    <input class="form-control" type="submit" name="bowling" value="Bowling" style="margin-top:2%;font-size:150%;font-family: 'Montserrat', sans-serif;letter-spacing:2px;background-color:rgba(0, 0, 0, 0.777);color:wheat;font-weight:bold;text-transform:uppercase;display:inline-block;width:20%;">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script>
+        $(".winning").hide();
+        $("#select").hide();
+        $("#mybg").hide();
+        $(document).ready(function(){
+            a = setTimeout(function(){
+                $("#myVideo").fadeOut(2000, "swing")
+                $(".winning").fadeIn(250)
+                $("#mybg").show()
+            }, 5000)
+        })
+        $(document).ready(function(){
+            a = setTimeout(function(){
+                $("#select").fadeIn(500)
+            }, 5000)
+        })
+    </script>
+{% endblock script %}

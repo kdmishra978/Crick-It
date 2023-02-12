@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Players-List</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        body{
+            background: url("{% static 'images/matchbg.jpg' %}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 100% 100%;
+        }
+        h2 {
+            font-size: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+    <h2 style="letter-spacing: 2px;">Players List</h2>
+    <a href="batsman/"><button class="btn btn-secondary">View-Batsman</button></a>
+    <a href="bowler/"><button class="btn btn-secondary">View-Bowler</button></a>
+    <a href="allrounder/"><button class="btn btn-secondary">View-AllRounder</button></a>
+    <a href="wicketkeeperbatsman/"><button class="btn btn-secondary">View-Wicket-Keeper</button></a>
+
+    <a href="underdogs/"><button class="btn btn-secondary">View-Underdogs</button></a>
+    <a href="elite/"><button class="btn btn-secondary">View-Elite</button></a>
+    <a href="masters/"><button class="btn btn-secondary">View-Masters</button></a>
+    <a href="legends/"><button class="btn btn-secondary">View-Legends</button></a>
+
+{% endblock content %}
+
+{% block script %}
+    <script>
+
+    </script>
+{% endblock script %}

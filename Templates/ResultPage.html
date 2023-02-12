@@ -1,0 +1,707 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Match- {{team1_print_name}} vs {{team2_print_name}}</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        body{
+            background: url("{% static 'images/matchbgmain.png' %}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .bdy{
+            background: url("{% static 'images/board.jpg' %}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 100% 100%;
+        }
+        .team-name{
+            margin-top: 3.5%;
+            text-shadow: 1px 2px 2px black;
+            width: 180px;
+            transform:scale(1.0);
+            position: fixed;
+            font-size: 38px;
+            font-weight: bolder;
+            position: fixed;text-transform: uppercase;
+            color:aliceblue;
+            font-family: 'Josefin Sans', sans-serif;
+        } 
+        .team-name-addon{
+            transform:scale(1.25);
+        }
+        .scoreboard{
+            margin-top: 3.5%;
+            margin-left: 25%;
+            text-shadow: 1px 2px 2px aliceblue;
+            transform:scale(1.25);
+            position: fixed;
+            font-size: 42px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            color:black;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .target{
+            margin-left: 2%;
+            margin-top: 10.5%;
+            position:fixed;
+            font-size: 24px;
+            letter-spacing:4px;
+            color: aliceblue;
+            text-shadow: 1px 2px 2px black;
+            transform:scale(1.25);
+        }
+        #simulate-button{
+            position: fixed;
+            transform: skewX(-38.5deg);
+            margin-left: 22.7%;
+            margin-top: 9.1%;
+        }
+        #start1st, #start2nd, #matchSummary{
+            height:53px;
+            width: 285px;
+            font-size: 21.25px;
+            letter-spacing:1px;
+            border-radius: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        #start1st-text, #start2nd-text, #matchSummary-text{
+            transform: skewX(38.5deg);
+        }
+        .batsman{
+            border: 0px solid black;
+            border-radius: 12.5px 12.5px 0 0;
+        }
+        .bowl{
+            border: 0px solid black;
+            border-radius: 12.5px 0 12.5px 12.5px;
+        }
+        .striker{
+            position: fixed;
+            margin-left:60.05%;
+            margin-top:1.6%;
+        }
+        #strkscore, #nonstrkscore{
+            padding-top: 10px;
+            color:black;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        #bowlscore{
+            text-align:left;
+            display: inline;
+            position: fixed;
+            color:black;
+            padding-top:10px;
+            width:200px;
+            height:100px;
+            overflow:hidden;
+            margin-left:2%;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .nonstriker{
+            position: fixed;
+            margin-left:80.8%;
+            margin-top:1.6%;
+        }
+        .bowler{
+            position: fixed;
+            margin-left:60.05%;
+            margin-top:30.4%;
+        }
+        .dot{
+            display: inline-block;
+            width: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 900;
+            margin-right: 5px;
+            border: 1px solid transparent;
+            background-color: #fdffbc;
+            color:#58391c;
+        }
+        .six {
+            background-color:#54e346;
+            color:#fffaa4;
+        }
+        .wicket{
+            background-color:#ff4646;
+            color:#fff5c0;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+          }
+          
+          ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+          }
+           
+          ::-webkit-scrollbar-thumb {
+            background: #888; 
+          }
+          
+          ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+          }
+        .board{
+            position: fixed;
+            margin-top: 14%;
+            margin-left: 1.8%;
+            background-color:rgba(0, 0, 225, 0.105);
+            height: 400px;
+            width:520px;
+            border-radius: 10px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border: 5px solid white;
+        }
+        .perover{
+            border-bottom:1px solid white;
+            padding: 2% 4% 2% 4%;
+        }
+        .over{
+            background-color:transparent;
+            color:white;
+            font-size: 24px;
+            text-shadow: 1px 2px 2px black;
+            border-right:2px solid white;
+            padding: 0px 30px 0px 0px;
+            border-radius: 0px;
+        }
+        .bwl{
+            background-color:transparent;
+            color:white;
+            font-size: 24px;
+            border-left:2px solid white;
+            padding: 0px 30px 0px 15px;
+            text-transform: uppercase;
+            border-radius: 0px;
+            text-shadow: 1px 2px 2px black;
+        }
+        .board-nav{
+            background-color: #48426d;
+            height: 40px;
+            border-radius: 2px 2px 0px 0px;
+        }
+        .boardbtn{
+            border: none;
+            background-color:transparent;
+            color:#ff7b54;
+            font-size: 22px;
+            text-transform: uppercase;
+            text-shadow: 1px 2px 5px black;
+            font-family: 'Poppins', sans-serif;
+        }
+        .perbatsman{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 25%;
+            border-bottom: 0px solid gold;
+            font-size: 110%;
+            text-transform: uppercase;
+            text-shadow: 1px 2px 5px black;
+            transform: skewX(-15deg);
+        }
+        .perbowler{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 25%;
+            border-bottom: 0px solid gold;
+            font-size: 90%;
+            text-transform: uppercase;
+            text-shadow: 1px 2px 5px black;
+            transform: skewX(-15deg);
+            color:#8bf581;
+        }
+        .batting-team1{
+            margin-top: 10%;
+            margin-left: 7%;
+            color: aliceblue;
+            width: 160%;
+            position: fixed;
+        }
+        .batting-team2{
+            margin-top: 10%;
+            margin-left: 53%;
+            color: aliceblue;
+            width: 160%;
+            position: fixed;
+        }
+        .bowling-team1{
+            margin-top: 34%;
+            margin-left: 53%;
+            color: aliceblue;
+            width: 160%;
+            position: fixed;
+        }
+        .bowling-team2{
+            margin-top: 34%;
+            margin-left: 7%;
+            color: aliceblue;
+            width: 160%;
+            position: fixed;
+        }
+        .scr{
+            font-weight: bold;
+        }
+        .scr1{
+            font-size: 24px;
+        }
+        .bolder{
+            font-size:32px;
+            font-weight: bolder;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+    <div class="simulate">
+        <div>
+            <div class="team-name" align = "center">
+                
+            </div>
+            <div class="scoreboard">
+
+            </div>
+            <div class="target">
+
+            </div>
+        </div>
+
+        <div id="simulate-button">
+            <button id="start1st" class="btn btn-warning">
+                <div id="start1st-text">
+                    SIMULATE 1<sup>ST</sup> INNINGS
+                </div>
+            </button>
+            
+            <button id="start2nd" class="btn btn-warning">
+                <div id="start2nd-text">
+                    SIMULATE 2<sup>ND</sup> INNINGS
+                </div>
+            </button>
+
+            <button id="matchSummary" class="btn btn-warning">
+                <div id="matchSummary-text">
+                    MATCH SUMMARY
+                </div>
+            </button>
+        </div>
+
+        <div>
+            <div class="striker">
+                <div id="strkscore">
+
+                </div>
+            </div>
+            <div class="nonstriker">
+                <div id="nonstrkscore">
+                    
+                </div>
+            </div>
+            <div class="bowler">
+                <div id="bowlscore">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="board">
+            <div class="board-nav" style="display: flex; flex-direction:row;justify-content:space-evenly;">
+                <div class="perball">
+                    <button id="perball-btn" class="boardbtn">PERBALL</button>
+                </div>        
+            </div>
+        </div>
+    </div>
+
+    <div class="after-match">
+        <div class="team1">
+            <div class="batting-team1">
+                
+            </div>
+            <div class="bowling-team2">
+                <div style="border-bottom: 1px solid white;width:25%;padding-bottom:0.5%;">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="team2">
+            <div class="batting-team2">
+                
+            </div>
+            <div class="bowling-team1">
+                <div style="border-bottom: 1px solid white;width:25%;padding-bottom:0.5%;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+{% block script %}
+    <script>
+        var data1234 = ""
+        var team12 = ""
+        function handleboard(data, team){
+            count = 1
+            $(".batting-team1")[0].innerHTML = `<div class="scr1">Score - <span class='bolder'>${data[team][1]['score']}/${data[team][1]['wickets']} (${data[team][1]['overs']})</span></div>`
+            while(count != 11){
+                for(p in data[team][1]['batting']){
+                    if(count == data[team][1]['batting'][p]['number']){
+                        $(".batting-team1")[0].innerHTML += `<div class="perbatsman">
+                            <div class="name">${p}</div>
+                            <div class="scr">${data[team][1]['batting'][p]['runs']}(${data[team][1]['batting'][p]['ballsfaced']})</div>
+                        </div>`
+                    }
+                }
+                count += 1
+            }
+            for(bowler in data[team][1]['bowling']){
+                console.log(data[team][1]['bowling'][bowler])
+                $(".bowling-team2")[0].innerHTML += `<div class="perbowler">
+                    <div class="name">${bowler}</div>
+                    <div class="scr">${data[team][1]['bowling'][bowler]['runsgiven']}/${data[team][1]['bowling'][bowler]['wickets']}(${data[team][1]['bowling'][bowler]['ballsbowled']})</div>
+                </div>`
+            }
+            count = 1
+            $(".batting-team2")[0].innerHTML = `<div class="scr1">Score - <span class='bolder'>${data[team][2]['score']}/${data[team][2]['wickets']} (${data[team][2]['overs']})</span></div>`
+            while(count != 11){
+                for(p in data[team][2]['batting']){
+                    if(count == data[team][2]['batting'][p]['number']){
+                        $(".batting-team2")[0].innerHTML += `<div class="perbatsman">
+                            <div class="name">${p}</div>
+                            <div class="scr">${data[team][2]['batting'][p]['runs']}(${data[team][2]['batting'][p]['ballsfaced']})</div>
+                        </div>`
+                    }
+                }
+                count += 1
+            }
+            for(bowler in data[team][2]['bowling']){
+                console.log(data[team][2]['bowling'][bowler])
+                $(".bowling-team1")[0].innerHTML += `<div class="perbowler">
+                    <div class="name">${bowler}</div>
+                    <div class="scr">${data[team][2]['bowling'][bowler]['runsgiven']}/${data[team][2]['bowling'][bowler]['wickets']}(${data[team][2]['bowling'][bowler]['ballsbowled']})</div>
+                </div>`
+            }
+        }
+
+        $(".after-match").hide()
+        $("#start2nd").hide()
+        $("#matchSummary").hide()
+
+        var team1 = "{{team1.name}}"
+        var team2 = "{{team2.name}}"
+        var team1_print_name = "{{team1_print_name}}"
+        var team2_print_name = "{{team2_print_name}}"
+
+        if(team1_print_name.length < 6){
+            $(".team-name").addClass("team-name-addon")
+        }
+
+        $(".team-name")[0].innerHTML = team1_print_name
+        $(".scoreboard")[0].innerHTML = String("0/0") + String("  - (") + String("0.0") + String(")")  
+        $(".target")[0].innerHTML = "1<sup>ST</sup> INNINGS"
+
+        var data = NaN
+
+        $.ajax({
+            type: 'GET',
+            url: 'scorecard_json',
+            success: function(response){
+                data = response 
+            },
+            error: function(response){
+                console.log('an error occured')
+            }
+        })
+
+        $("#start1st").click(function(){
+            var team = team1 + " vs " + team2
+            console.log(data[team]['superover'])
+            console.log(data[team]['winner'])
+            const firstInning = data[team]['perBallResults1']
+            count = 0
+            for(var i in firstInning){
+                count += 1
+            }
+            ball = 1
+            try{
+                a = setInterval(function(){
+                    try{
+                        if(firstInning[ball]['result'] != "-"){
+                            over = String(Math.floor(ball/6)) + String(".") + String(Math.round(ball%6)) 
+                        }
+                        else{
+                            over = data[team][1]['overs']
+                        }
+                    }
+                    catch(err){
+                        console.log("here")
+                        clearInterval(a)
+                    }
+
+                    if(ball == (count+1)){
+                        $("#start1st").hide()
+                        $("#start2nd").show()
+                        clearInterval(a)
+                    }
+                    else{
+
+                        $(".scoreboard")[0].innerHTML = firstInning[ball]['score'] + String("  - (") + over + String(")")  
+                        striker = firstInning[ball]['striker']
+                        fullname = striker['name'].split(' ')
+                        firstName = fullname[0]
+                        lastname = fullname[fullname.length-1]
+                        sname = firstName[0].toUpperCase() + "." + lastname
+                        strk = sname + "* " + striker['runs'] + "(" + striker['balls'] + ")"
+                        $.ajax({
+                            type: 'GET',
+                            url: `http://127.0.0.1:8000/match/start/${team1}/${team2}/get_player_json/${striker['name']}/`,
+                            success: function(response){
+                                $(".striker")[0].innerHTML = `<img class="batsman" src="${response['img_href']}" alt="" srcset="" height="200px" width="215px"><div id="strkscore">${strk}</div>` 
+                            },
+                            error: function(response){
+                                console.log('an error occured')
+                            }
+                        })
+    
+                        nonstriker = firstInning[ball]['nonstriker']
+                        fullname = nonstriker['name'].split(' ')
+                        firstName = fullname[0]
+                        lastname = fullname[fullname.length-1]
+                        nsname = firstName[0].toUpperCase() + "." + lastname
+                        nonstrk = nsname + " " + nonstriker['runs'] + "(" + nonstriker['balls'] + ")"
+                        $.ajax({
+                            type: 'GET',
+                            url: `http://127.0.0.1:8000/match/start/${team1}/${team2}/get_player_json/${nonstriker['name']}/`,
+                            success: function(response){
+                                $(".nonstriker")[0].innerHTML = `<img class="batsman" src="${response['img_href']}" alt="" srcset="" height="200px" width="215px"><div id="strkscore">${nonstrk}</div>` 
+                            },
+                            error: function(response){
+                                console.log('an error occured')
+                            }
+                        })
+    
+                        bowler = firstInning[ball]['bowler']
+                        fullname = bowler['name'].split(' ')
+                        firstName = fullname[0]
+                        lastname = fullname[fullname.length-1]
+                        runs_wickets = String(bowler['runs']) + "/" + String(bowler['wickets'])
+                        bowler_over = String(Math.floor(bowler['balls']/6)) + String(".") + String(Math.round(bowler['balls']%6))
+                        bname = firstName[0].toUpperCase() + "." + lastname
+                        $.ajax({
+                            type: 'GET',
+                            url: `http://127.0.0.1:8000/match/start/${team1}/${team2}/get_player_json/${bowler['name']}/`,
+                            success: function(response){
+                                $(".bowler")[0].innerHTML = `<img class="bowl" src="${response['img_href']}" alt="" srcset="" height="200px" width="215px"><div id="bowlscore">${bname}<br>${runs_wickets}<br>${bowler_over}</div>` 
+                            },
+                            error: function(response){
+                                console.log('an error occured')
+                            }
+                        })
+
+                        if((Math.round(((ball-1)%6)) == 0)){
+                            faulty = 1 
+                            results = []
+                            dictionary = {}
+                        }
+                        
+                        if(firstInning[ball]['result'] == "w"){
+                            dictionary[faulty] = "dot wicket"
+                            faulty += 1
+                            results.push(firstInning[ball]['result'])
+                        }else if((firstInning[ball]['result'] == "6")||(firstInning[ball]['result'] == "4")){
+                            dictionary[faulty] = "dot six"
+                            faulty += 1
+                            results.push(firstInning[ball]['result'])
+                        }else{
+                            dictionary[faulty] = "dot"
+                            faulty += 1
+                            results.push(firstInning[ball]['result'])
+                        }
+                        
+                        if((ball%6) == 0){
+                            $(".board")[0].innerHTML += `<div class="perover">
+                                <div class="dot over">${Math.ceil(over)}</div>
+                                <span style="padding-left: 10px;"></span>
+                                <div class="${dictionary[1]}">${results[0]}</div>
+                                <div class="${dictionary[2]}">${results[1]}</div>
+                                <div class="${dictionary[3]}">${results[2]}</div>
+                                <div class="${dictionary[4]}">${results[3]}</div>
+                                <div class="${dictionary[5]}">${results[4]}</div>
+                                <div class="${dictionary[6]}">${results[5]}</div>
+                                <span style="padding-right: 5px;"></span>
+                                <div class="dot bwl">${bname}</div>
+                            </div>`
+                        }
+
+                    }
+                    ball += 1
+                }, 500)   
+            }catch(err){
+                console.log("here")
+                clearInterval(a)
+            }
+        })
+
+        $("#start2nd").click(function(){
+            var team = team1 + " vs " + team2
+            const secondInning = data[team]['perBallResults2']
+            $(".board")[0].innerHTML = `<div class="board-nav" style="display: flex; flex-direction:row;justify-content:space-evenly;">
+                <div class="perball">
+                    <button id="perball-btn" class="boardbtn">PERBALL</button>
+                </div>        
+            </div>`
+            
+            $(".target")[0].innerHTML = String("TARGET - ") + String(data[team][1]['score'] + 1)
+
+            count = 0
+            for(var i in secondInning){
+                count += 1
+            }
+            ball = 1
+            a = setInterval(function(){
+                try{
+                        if(secondInning[ball]['result'] != "-"){
+                            over = String(Math.floor(ball/6)) + String(".") + String(Math.round(ball%6)) 
+                        }
+                        else{
+                            over = data[team][2]['overs']
+                        }
+                    }
+                    catch(err){
+                        console.log("here")
+                        clearInterval(a)
+                    }
+                if(ball == (count+1)){
+                    clearInterval(a)
+                    data1234 = data
+                    team12 = team
+                    $("#start2nd").hide()
+                    $("#matchSummary").show()
+                }
+                else{
+                    if(team2_print_name.length < 6){
+                        $(".team-name").addClass("team-name-addon")
+                    }
+                    $(".team-name")[0].innerHTML = team2_print_name
+                    $(".scoreboard")[0].innerHTML = secondInning[ball]['score'] + String("   (") + over + String(")")
+
+                    striker = secondInning[ball]['striker']
+                    fullname = striker['name'].split(' ')
+                    firstName = fullname[0]
+                    lastname = fullname[fullname.length-1]
+                    sname = firstName[0].toUpperCase() + "." + lastname
+                    strk = sname + "* " + striker['runs'] + "(" + striker['balls'] + ")"
+                    $.ajax({
+                        type: 'GET',
+                        url: `http://127.0.0.1:8000/match/start/${team1}/${team2}/get_player_json/${striker['name']}/`,
+                        success: function(response){
+                            $(".striker")[0].innerHTML = `<img class="batsman" src="${response['img_href']}" alt="" srcset="" height="200px" width="215px"><div id="strkscore">${strk}</div>` 
+                        },
+                        error: function(response){
+                            console.log('an error occured')
+                        }
+                    })
+
+                    nonstriker = secondInning[ball]['nonstriker']
+                    fullname = nonstriker['name'].split(' ')
+                    firstName = fullname[0]
+                    lastname = fullname[fullname.length-1]
+                    nsname = firstName[0].toUpperCase() + "." + lastname
+                    nonstrk = nsname + " " + nonstriker['runs'] + "(" + nonstriker['balls'] + ")"
+                    $.ajax({
+                        type: 'GET',
+                        url: `http://127.0.0.1:8000/match/start/${team1}/${team2}/get_player_json/${nonstriker['name']}/`,
+                        success: function(response){
+                            $(".nonstriker")[0].innerHTML = `<img class="batsman" src="${response['img_href']}" alt="" srcset="" height="200px" width="215px"><div id="strkscore">${nonstrk}</div>` 
+                        },
+                        error: function(response){
+                            console.log('an error occured')
+                        }
+                    })
+
+                    bowler = secondInning[ball]['bowler']
+                    fullname = bowler['name'].split(' ')
+                    firstName = fullname[0]
+                    lastname = fullname[fullname.length-1]
+                    runs_wickets = String(bowler['runs']) + "/" + String(bowler['wickets'])
+                    bowler_over = String(Math.floor(bowler['balls']/6)) + String(".") + String(Math.round(bowler['balls']%6))
+                    bname = firstName[0].toUpperCase() + "." + lastname
+                    $.ajax({
+                        type: 'GET',
+                        url: `http://127.0.0.1:8000/match/start/${team1}/${team2}/get_player_json/${bowler['name']}/`,
+                        success: function(response){
+                            $(".bowler")[0].innerHTML = `<img class="bowl" src="${response['img_href']}" alt="" srcset="" height="200px" width="215px">
+                            <div id="bowlscore">${bname}<br>${runs_wickets}<br>${bowler_over}</div>` 
+                        },
+                        error: function(response){
+                            console.log('an error occured')
+                        }
+                    })
+
+                    if((Math.round(((ball-1)%6)) == 0)){
+                        faulty = 1 
+                        results = []
+                        dictionary = {}
+                    }
+                    
+                    if(secondInning[ball]['result'] == "w"){
+                        dictionary[faulty] = "dot wicket"
+                        faulty += 1
+                        results.push(secondInning[ball]['result'])
+                    }else if((secondInning[ball]['result'] == "6")||(secondInning[ball]['result'] == "4")){
+                        dictionary[faulty] = "dot six"
+                        faulty += 1
+                        results.push(secondInning[ball]['result'])
+                    }else{
+                        dictionary[faulty] = "dot"
+                        faulty += 1
+                        results.push(secondInning[ball]['result'])
+                    }
+                    
+                    if((ball%6) == 0){
+                        $(".board")[0].innerHTML += `<div class="perover">
+                            <div class="dot over">${Math.ceil(over)}</div>
+                            <span style="padding-left: 10px;"></span>
+                            <div class="${dictionary[1]}">${results[0]}</div>
+                            <div class="${dictionary[2]}">${results[1]}</div>
+                            <div class="${dictionary[3]}">${results[2]}</div>
+                            <div class="${dictionary[4]}">${results[3]}</div>
+                            <div class="${dictionary[5]}">${results[4]}</div>
+                            <div class="${dictionary[6]}">${results[5]}</div>
+                            <span style="padding-right: 5px;"></span>
+                            <div class="dot bwl">${bname}</div>
+                        </div>`    
+                    }
+                }
+                ball += 1
+            }, 500)
+        })
+
+        $("#matchSummary").click(function(){
+            $("body").addClass("bdy")
+            $(".simulate").hide()
+            $(".after-match").show()
+            handleboard(data1234, team12) 
+        })
+    </script>
+{% endblock script %}

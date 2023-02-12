@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+    <title>Cricket-League</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        .base{
+            background-image: linear-gradient(30deg, #2094ab, #de7a22);
+            padding: 0.5%;
+        }
+        .main{
+            height: 500px;
+            background-image: linear-gradient(110deg,  #e4e978 50%, rgb(2, 45, 46, 0.1) 50%), url("{% static 'images/cricketbg.jpg' %}");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 80%;
+            margin: 3.7% 10%;
+            box-shadow: 10px 10px 5px 2px rgba(3, 3, 3, 0.4);
+        }
+        #heading{
+            font-family: 'Montserrat', sans-serif;
+            text-transform:uppercase;
+            padding: 1.5% 2%;
+            letter-spacing: 5px;
+            color:#de7a22;
+            font-size: 34px;
+            font-weight: 600;
+        }
+        .input {
+            font-family: 'Josefin Sans', sans-serif;
+            width: 35%;
+            font-size:18px;
+            border: 0;
+            padding: 0;
+            background-color: transparent;
+            letter-spacing: 1px;;
+            text-transform: uppercase;
+            height: 2rem;
+            line-height: 2rem;
+            border-bottom: 1px solid #eee;
+            color: #2094ab;
+            transition: all .2s ease-in;
+          }
+        .input:focus {
+            outline: 0;
+            border-color: #de7a22;
+        }
+        .input:focus + .label, input:valid + .label {
+            transform: translateY(-100%);
+            font-size: 14px;
+            color: #de7a22d0;
+        }
+        .field {
+            position: relative;
+            margin-bottom: 36px;
+        }
+        .label {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size:16px;
+            letter-spacing: 2px;;
+            text-transform: uppercase;
+            position: absolute;
+            left: 0px;
+            height: 2rem;
+            line-height: 2rem;
+            bottom: 0;
+            color: #de7a22;
+            transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .form{
+            margin:2.5%;
+        }
+        option{
+            background-color:#e4e978;
+        }
+        .bttn{
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 20px;
+            width:25%;
+            padding-top:5px;
+            height:35px;
+            border:1px solid #de7a22;
+            color:#de7a22;
+            background-color:transparent;
+            border-radius: 5px;
+        }
+        .bttn:hover{
+            border:1px solid #eeeeee;
+            color:white;
+            background-color:#2094abbd;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+    
+    <div class="base">
+        <div class="main">
+            <h2 id="heading"></h2>
+                <div class="form">
+                    <form action="" method="POST" class="form">
+                        <div class="field">
+                            <input type="text" id="fieldUser" name="name" class="input" required pattern=.*\S.* />
+                            <label for="fieldUser" class="label">TOURNAMENT NAME</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="venue" id="fieldPassword" class="input" required pattern=.*\S.* />
+                            <label for="fieldPassword" class="label">VENUE</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" name="budget" id="fieldPassword" class="input" required pattern=.*\S.* />
+                            <label for="fieldPassword" class="label">PER TEAM BUDGET</label>
+                        </div>
+                        <div class="field">
+                            <select name="number_of_teams" style="color:#de7a22; font-size:16px;" class="input" aria-label=".form-select-lg example">
+                                <option selected disabled>TEAMS</option>
+                                <option class=".opt" value="4">4 teams</option>
+                                <option class=".opt" value="8">8 teams</option>
+                                <option class=".opt" value="12">12 teams</option>
+                                <option class=".opt" value="16">16 teams</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <select name="overs" style="color:#de7a22; font-size:16px;" class="input" aria-label=".form-select-lg example">
+                                <option selected disabled>OVERS</option>
+                                <option class=".opt" value="5">5 overs</option>
+                                <option class=".opt" value="10">10 overs</option>
+                                <option class=".opt" value="20">20 overs</option>
+                                <option class=".opt" value="50">50 overs</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="bttn">START</button>
+
+                    </form>
+                </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script>
+        $(document).ready(function(){
+            var heading = "TOURNAMENT DETAILS"
+            var i = 0
+            a = setInterval(function(){
+                $("#heading")[0].innerHTML += heading[i]
+                i+=1
+                if($("#heading")[0].innerHTML.length == heading.length){
+                    clearInterval(a)
+                }
+            }, 75)
+        })
+    </script>
+{% endblock script %}

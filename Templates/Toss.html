@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>TOSS - {{team1|title}} v/s {{team2|title}}</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        body{
+            background: url("{% static 'images/stdbgblur.png' %}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 100% 100%;
+        }
+        .team_name{
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight:bolder;
+            letter-spacing:10px;
+            text-shadow: 1px 7px 7px #000000;
+            color:#ffcc29;
+            font-size: 400%;
+            font-weight: bolder;
+        }
+        .call{
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight:bolder;
+            letter-spacing:10px;
+            color:#e2780f;
+            text-shadow: 1px 2px 2px #000000;
+            font-size: 250%;
+            font-weight: bold;
+            margin-bottom: 1.5%;
+        }
+        #heading{
+            margin: 7.5% 0% 1.5% 0%;
+        }
+        #start{
+            margin: 7.5% 0%;
+        }
+        label, h3{
+            font-family: 'Montserrat', sans-serif;
+            color: #ffcc29;
+            font-size: 150%;
+            letter-spacing:5px;
+        }
+        option{
+            text-transform: uppercase;
+            background-color: #080b0c;
+            color:#ffcc29;
+            font-size: 125%;
+            letter-spacing:5px;
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                <strong>{{message}}!</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div align="center" id="heading">
+        <div class="team_name">{{team2}}</div>
+    </div>
+
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div style="display: flex;flex-direction:row; justify-content:space-evenly">
+                <div id="team2" style="width: 50%;">
+                    <div class="call">What's your call?</div>
+                    <div class="form-group" align="center">
+                        <select name="team2_coin" class="form-control" id="team2" style="margin-top:6%;font-size:150%;font-family: 'Montserrat', sans-serif;letter-spacing:2px;background-color:rgba(0, 0, 0, 0.777);color:wheat;font-weight:bold;text-transform:uppercase;width:50%;padding-left:18%;">
+                        <option>Heads</option>
+                        <option>Tails</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div align="center" id="start">
+                <button type="submit" class="btn btn-warning" style="width:15%;font-size:125%;font-family: 'Montserrat', sans-serif;letter-spacing:2px"><span>TOSS</span></button>
+            </div>
+
+        </form>
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script>
+
+    </script>
+{% endblock script %}

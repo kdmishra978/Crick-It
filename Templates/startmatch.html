@@ -1,0 +1,407 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Match-Base</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        body{
+            background: url("{% static 'images/stdbgblur.png' %}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 100% 100%;
+            font-family: 'Montserrat', sans-serif;
+            color:white!important;
+        }
+        .main{
+            margin:5% 5% 2% 5%;
+            border: 5px solid white;
+            border-radius: 25px;
+            background-color:rgba(0, 0, 0, 0.53);
+        }
+        .player{
+            font-size:120%;
+            text-transform: uppercase;
+            text-shadow: 1px 2px 2px #000000;
+            font-weight:bold;
+        }
+        #team1, #team2{
+            transform: skewX(0deg);
+            text-align: left;
+            padding:2%;
+        }
+        .team_name{
+            letter-spacing: 2px;
+            font-size: 250%;
+            text-transform: uppercase;
+            font-weight:bold;
+            text-shadow: 1px 2px 2px #000000;
+            padding-bottom: 10px;
+        }
+        .one{
+            color:#00d4fa;
+            text-shadow: 1px 2px 2px #110101;
+        }
+        .two{
+            color:#fa003e;
+            text-shadow: 1px 2px 2px #110101;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+        } 
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        } 
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        }
+        .bowling-lineup{
+            text-transform: uppercase;
+        }
+        .heading{
+            letter-spacing: 2px;
+            font-size: 200%;
+            text-transform: uppercase;
+            font-weight:bold;
+            text-shadow: 1px 2px 2px #000000;
+            padding-bottom: 10px;   
+        }
+    </style>
+{% endblock css %}
+
+{% block content %}
+
+    <div class="main" style=" padding:0 5%; height:450px; overflow-y:auto;">
+
+        <div class="bowling-lineup">
+            <div align="center" class="heading" style="padding:2% 0px 0px 0px;color:#ffcc29">
+                Batting Lineup
+            </div>
+        </div>
+
+        <div class="batting-lineup" style="display:flex; flex-direction:row; justify-content:space-between;">
+            <div id="team1">
+                <div class="team_name one">
+                    {{team1}}
+                </div>
+                {% for player in team1_lineup %}
+                    <div class="player p1" style="display: flex;flex-direction:row; justify-content:space-between;">
+                        <div>
+                            <span class="p1-{{forloop.counter}}">
+                                {% if player == "" %}
+
+                                {% else %}
+                                    <span class="p1-{{forloop.counter}}-name">{{player}}</span>
+                                {% endif %}
+                                {% if player|upper == team1.captain.name|upper %}
+                                    (c)
+                                {% endif %}
+                                {% if player|upper == team1.wicketkeeper.name|upper %}
+                                    (wk)
+                                {% endif %}
+                            </span> 
+                        </div>
+
+                        <div>
+                            {% if player == "" %}
+                            {% else %}
+                                <button class="btn btn-group btn-outline-light btn-sm bttn" id="up p1-{{forloop.counter}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                                </button>
+                                <button class="btn btn-group btn-outline-warning btn-sm bttn" id="down p1-{{forloop.counter}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                                    </svg>
+                                </button>    
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>  
+
+            <div id="team2">
+                <div class="team_name two">
+                    {{team2}}
+                </div>
+                {% for player in team2_lineup %}
+                <div class="player p2" style="display: flex;flex-direction:row; justify-content:space-between;">
+                    <div>
+                        <span class="p2-{{forloop.counter}}">
+                            {% if player == "" %}
+                            {% else %}
+                                <span class="p2-{{forloop.counter}}-name">{{player}}</span>
+                            {% endif %}
+                            {% if player|upper == team2.captain.name|upper %}
+                                (c)
+                            {% endif %}
+                            {% if player|upper == team2.wicketkeeper.name|upper %}
+                                (wk)
+                            {% endif %}
+                        </span>
+                    </div>
+
+                    <div>
+                        {% if player == "" %}
+                        {% else %}
+                            <button class="btn btn-group btn-outline-light btn-sm bttn" id="up p2-{{forloop.counter}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                            </svg>
+                            </button>
+                            <button class="btn btn-group btn-outline-warning btn-sm bttn" id="down p2-{{forloop.counter}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                            </button>    
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Bowling-Lineup -->
+
+        <div class="bowling-lineup" style="padding:0px;color:#ffcc29">
+            <div align="center" class="heading">
+                Bowling Lineup
+            </div>
+        </div>
+
+        <div class="batting-lineup" style="display:flex; flex-direction:row; justify-content:space-between;">
+            <div id="team1">
+                <div class="team_name one">
+                    {{team1}}
+                </div>
+                {% for player in team1_bowling_lineup %}
+                    <div class="player b1" style="display: flex;flex-direction:row; justify-content:space-between;">
+                        <div>
+                            <span class="b1-{{forloop.counter}}">
+                                {% if player == "" %}
+                                {% else %}
+                                    <span class="b1-{{forloop.counter}}-name">{{player}}</span>
+                                {% endif %}
+                            </span> 
+                        </div>
+
+                        <div>
+                            {% if player == "" %}
+                            {% else %}
+                                <button class="btn btn-group btn-outline-light btn-sm bowler-bttn" id="up b1-{{forloop.counter}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                                </svg>
+                                </button>
+                                <button class="btn btn-group btn-outline-warning btn-sm bowler-bttn" id="down b1-{{forloop.counter}}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                                    </svg>
+                                </button>    
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>  
+
+            <div id="team2">
+                <div class="team_name two">
+                    {{team2}}
+                </div>
+                {% for player in team2_bowling_lineup %}
+                <div class="player b2" style="display: flex;flex-direction:row; justify-content:space-between;">
+                    <div>
+                        <span class="b2-{{forloop.counter}}">
+                            {% if player == "" %}
+                            {% else %}
+                                <span class="b2-{{forloop.counter}}-name">{{player}}</span>
+                            {% endif %}
+                        </span>
+                    </div>
+
+                    <div>
+                        {% if player == "" %}
+                        {% else %}
+                            <button class="btn btn-group btn-outline-light btn-sm bowler-bttn" id="up b2-{{forloop.counter}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                            </svg>
+                            </button>
+                            <button class="btn btn-group btn-outline-warning btn-sm bowler-bttn" id="down b2-{{forloop.counter}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                            </button>    
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+    <div align="center">
+        <button class="btn btn-group btn-primary btn-big toss">
+            <a href="http://localhost:8000/toss/{{team1}}/{{team2}}/" class="toss" style="color:white;text-decoration:none;">TOSS</a>
+        </button>
+    </div>
+
+{% endblock content %}
+
+{% block script %}
+    <script>
+        $(".bttn").click(function(e){
+            clicked_id = $(this).attr("id")
+            data = clicked_id.split(' ')
+            direction = data[0]
+            
+            player_id = data[1]
+            team = player_id[1]
+            current_position = player_id.slice(3)
+
+            if(current_position == "1" && direction == "up"){
+                alert("cant move upward")
+            }else if(current_position == "11" && direction == "down"){
+                alert("cant move downward")
+            }else{
+                if(direction == "up"){
+                    next = player_id.slice(3)
+                    next = parseInt(next) - 1
+                    new_position = player_id.slice(0, 3)
+                    new_position += next
+                    
+                    p1 = $(`.${player_id}`)[0].innerHTML
+                    p2 = $(`.${new_position}`)[0].innerHTML
+                    
+                    temp = p1
+
+                    $(`.${player_id}`)[0].innerHTML = p2
+                    $(`.${new_position}`)[0].innerHTML = temp
+
+                }else{
+                    next = player_id.slice(3)
+                    next = parseInt(next) + 1
+                    new_position = player_id.slice(0, 3)
+                    new_position += next
+
+                    p1 = $(`.${player_id}`)[0].innerHTML
+                    p2 = $(`.${new_position}`)[0].innerHTML
+                    
+                    temp = p1
+
+                    $(`.${player_id}`)[0].innerHTML = p2
+                    $(`.${new_position}`)[0].innerHTML = temp
+                }
+            }
+        })
+
+        $(".bowler-bttn").click(function(e){
+            clicked_id = $(this).attr("id")
+            data = clicked_id.split(' ')
+            direction = data[0]
+            
+            player_id = data[1]
+            team = player_id[1]
+            current_position = player_id.slice(3)
+
+            if(current_position == "1" && direction == "up"){
+                alert("cant move upward")
+            }else if(current_position == "20" && direction == "down"){
+                alert("cant move downward")
+            }else{
+                if(direction == "up"){
+                    next = player_id.slice(3)
+                    next = parseInt(next) - 1
+                    new_position = player_id.slice(0, 3)
+                    new_position += next
+                    
+                    p1 = $(`.${player_id}`)[0].innerHTML
+                    p2 = $(`.${new_position}`)[0].innerHTML
+                    
+                    temp = p1
+
+                    $(`.${player_id}`)[0].innerHTML = p2
+                    $(`.${new_position}`)[0].innerHTML = temp
+
+                }else{
+                    next = player_id.slice(3)
+                    next = parseInt(next) + 1
+                    new_position = player_id.slice(0, 3)
+                    new_position += next
+
+                    p1 = $(`.${player_id}`)[0].innerHTML
+                    p2 = $(`.${new_position}`)[0].innerHTML
+                    
+                    temp = p1
+
+                    $(`.${player_id}`)[0].innerHTML = p2
+                    $(`.${new_position}`)[0].innerHTML = temp
+                }
+            }
+        })  
+
+        team1 = '{{team1}}'
+        team2 = '{{team2}}'
+        $(".toss").click(function(){
+            t1 = "p1-1"
+            t1_data = []
+            for(var i=1; i<=11; i++){
+                t1_data.push($(`.${t1}`)[0].innerText)
+                next = t1.slice(3)
+                next = parseInt(next) + 1
+                t1 = t1.slice(0, 3)
+                t1 += next
+            }
+            t2 = "p2-1"
+            t2_data = []
+            for(var i=1; i<=11; i++){
+                t2_data.push($(`.${t2}`)[0].innerText)
+                next = t2.slice(3)
+                next = parseInt(next) + 1
+                t2 = t2.slice(0, 3)
+                t2 += next
+            }
+
+            t1_bowl = "b1-1"
+            t1_bowl_data = []
+            for(var i=1; i<=20; i++){
+                t1_bowl_data.push($(`.${t1_bowl}`)[0].innerText)
+                next = t1_bowl.slice(3)
+                next = parseInt(next) + 1
+                t1_bowl = t1_bowl.slice(0, 3)
+                t1_bowl += next
+            }
+            t2_bowl = "b2-1"
+            t2_bowl_data = []
+            for(var i=1; i<=20; i++){
+                t2_bowl_data.push($(`.${t2_bowl}`)[0].innerText)
+                next = t2_bowl.slice(3)
+                next = parseInt(next) + 1
+                t2_bowl = t2_bowl.slice(0, 3)
+                t2_bowl += next
+            }
+            $.ajax({
+                type:'POST',
+                url:`http://127.0.0.1:8000/match/start/send_lineup/${team1}/${team2}/`,
+                data:{
+                    t1_data:JSON.stringify(t1_data),
+                    t2_data:JSON.stringify(t2_data),
+                    t1_bowl_data:JSON.stringify(t1_bowl_data),
+                    t2_bowl_data:JSON.stringify(t2_bowl_data)
+                },
+                success:function(response){
+                    console.log(response)
+                },
+                error:function(error){
+                    console.log(error)
+                }
+            })
+        })
+    </script>
+{% endblock script %}

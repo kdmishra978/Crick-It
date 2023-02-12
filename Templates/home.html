@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Cricket-League</title>
+{% endblock title %}
+
+{% block css %}
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        } 
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        } 
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        }
+        body{
+            /*background: url("{% static 'images/main.mp4' %}") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: 100% 100%;*/
+        }
+        label, h3{
+            font-family: 'Montserrat', sans-serif;
+            color: #ffcc29;
+            font-size: 150%;
+            letter-spacing:5px;
+        }
+        .spl-btn{
+            color:wheat;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: lowercase;
+            background-color: transparent;
+            border: none;
+            font-size: 175%;  
+            text-shadow: 1px 2px 5px black;
+            letter-spacing: 5px;
+            padding: 1.50%;
+            outline:none;
+        }
+        .spl-btn:hover{
+            outline:none;
+            color: #ffcc29;
+            border:2px solid #ffcc29;
+            border-radius:5px; 
+        }
+        .spl-btn:focus{
+            outline:none;
+            border:2px solid wheat;
+            border-radius:5px; 
+        }
+        #heading{
+            letter-spacing:5px;font-size:400%;color:#ffcc29;font-weight:bolder;text-shadow: 1px 2px 5px black;
+            line-height:55px;
+        }
+        #myVideo, #intro_video {
+            position: absolute;
+            right: 0;
+            top:0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: fill;
+          }
+          
+          /* Add some content at the bottom of the video/page */
+          .content {
+            position: relative;
+            margin-top: 5%;
+            margin-left: 7.5%;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 45%;
+            padding: 20px;
+            height:425px;
+            overflow:auto;
+            border-radius:5px;
+            border: 1px solid lightgrey;
+          }
+          
+        .addon{font-weight: bold;}
+    </style>
+{% endblock css %}
+
+{% block content %}
+    <video autoplay muted loop id="intro_video">
+        <source src="{% static 'images/intro2.mp4' %}" type="video/mp4">
+    </video>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'images/bg_main2.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <h1 id="heading">crick-it</h1> <br>
+        <button class="spl-btn" id="players" class="btn btn-info">View-Players</button> <br>
+        <button class="spl-btn" id="tournament" class="btn btn-success">Start Tournament</button> <br>
+        <button class="spl-btn" id="match" class="btn btn-dark">Start Match</button> <br>
+        <button type="button" class="spl-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Team
+        </button> <br>
+        <button class="spl-btn" id="refresh" class="btn btn-danger">Refresh</button> <br>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" >
+            <div class="modal-content" style="background-color: #101719;">
+                <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel" class="addon">add team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #9c998d;"></button>
+                </div>
+                <div class="modal-body" style="background-color: #101719;">
+                    <form action="" method="post">
+                        <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">team name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="team_name" style="font-family: 'Montserrat', sans-serif;
+                        text-transform: uppercase;
+                        background-color: #080b0c;
+                        color:wheat">
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">owner name</label>
+                        <input type="text" class="form-control" name="owner" id="exampleInputPassword1" style="font-family: 'Montserrat', sans-serif;
+                        text-transform: uppercase;
+                        background-color: #080b0c;
+                        color:wheat;"> 
+                        </div>
+                        <div align="center">
+                            <button type="submit" class="spl-btn" style="font-size:150%;padding-left: 10%;padding-right:10%;">add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script>
+        $("#myVideo").hide()
+        $(document).ready(function(){
+            a = setTimeout(function(){
+                $("#intro_video").fadeOut(2000)
+                $("#myVideo").fadeIn(500)
+            }, 9000)
+        })
+
+        $("#refresh").click(function(){
+            if(confirm("are you sure?") == false){
+                location.href="http://localhost:8000/"
+            }else{
+                location.href="http://localhost:8000/refresh/"
+            }
+        })
+
+        $("#players").click(function(){
+            location.href="http://localhost:8000/players/"
+        })
+
+        $("#match").click(function(){
+            location.href="http://localhost:8000/match/"
+        })
+
+        $("#tournament").click(function(){
+            location.href="http://localhost:8000/tournament/start/"
+        })
+    </script>
+{% endblock script %}
